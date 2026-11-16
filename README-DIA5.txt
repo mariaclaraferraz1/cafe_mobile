@@ -32,3 +32,7 @@ As capturas precisam ser feitas no seu próprio navegador, conta do GitHub e cel
 - Todos os arquivos JavaScript passaram por `node --check`.
 - `manifest.json` foi validado como JSON.
 - Não foram simuladas capturas de tela do GitHub ou do celular.
+
+
+NOVA FUNCIONALIDADE — APAGAR FOTO DA GALERIA
+Cada foto agora possui um botão de lixeira. Ao tocar nele, o aplicativo pede confirmação; se o usuário confirmar, remove a foto da lista salva no localStorage e atualiza a galeria. O cache do Service Worker foi atualizado para v3.

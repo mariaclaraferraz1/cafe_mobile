@@ -166,7 +166,7 @@ function mostrarGaleria() {
     galeria.innerHTML = '<p class="vazio">Nenhuma foto ainda.</p>';
     return;
   }
-  for (const foto of fotos) {
+  fotos.forEach(function (foto, indice) {
     const div = document.createElement("div");
     div.className = "foto";
     div.innerHTML = `
@@ -174,13 +174,30 @@ function mostrarGaleria() {
       <small>${foto.data}</small>
       <div class="foto-acoes">
         <button class="btn-compartilhar-foto" aria-label="Compartilhar foto">📤</button>
+        <button class="btn-apagar-foto" aria-label="Apagar foto">🗑️</button>
       </div>
     `;
     div.querySelector(".btn-compartilhar-foto").addEventListener("click", function () {
       compartilharFoto(foto); // função que está em pwa.js
     });
+    div.querySelector(".btn-apagar-foto").addEventListener("click", function () {
+      apagarFoto(indice);
+    });
     galeria.appendChild(div);
+  });
+}
+
+// Remove a foto escolhida da lista e atualiza o armazenamento do celular
+function apagarFoto(indice) {
+  const confirmar = confirm("Deseja apagar esta foto da galeria?");
+  if (!confirmar) {
+    return;
   }
+
+  fotos.splice(indice, 1);
+  salvarFotos();
+  mostrarGaleria();
+  mostrarAviso("Foto apagada da galeria");
 }
 
 // ---------- Início ----------

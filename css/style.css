@@ -464,6 +464,11 @@ video.espelhado {
   cursor: pointer;
 }
 
+/* Botão para apagar uma foto da galeria */
+.foto-acoes .btn-apagar-foto {
+  color: #b42318;
+}
+
 
 /* ---------- Dia 6: modo escuro automático ---------- */
 @media (prefers-color-scheme: dark) {
