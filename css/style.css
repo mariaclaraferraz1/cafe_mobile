@@ -463,3 +463,31 @@ video.espelhado {
   font-size: 1rem;
   cursor: pointer;
 }
+
+
+/* ---------- Dia 6: modo escuro automático ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-principal: #d4a373;
+    --cor-destaque: #9b7653;
+    --cor-fundo: #171310;
+    --cor-card: #26211c;
+    --cor-texto: #f5eee7;
+    --cor-texto-suave: #c0b2a5;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .abas {
+    background: #211c18;
+    border-top-color: #40352c;
+  }
+
+  .btn-qtd {
+    background: #26211c;
+    color: var(--cor-principal);
+  }
+
+  .btn-foto {
+    background: #26211c;
+  }
+}
